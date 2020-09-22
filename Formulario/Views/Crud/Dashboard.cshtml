@@ -1,0 +1,45 @@
+﻿@model List<Formulario.Models.ViewModels.ListCrudViewModel>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
+        
+        <div class="wrapper wrapper--w780">
+            <a href="@Url.Action("Create","Crud")" class="btn btn--pill btn-primary ">Create</a>
+            <div class="card card-3">
+
+                <div class="card-body">
+                    <table class="table table-dark" style="color:white;">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Pais</th>
+                            </tr>
+                            </thead>
+                        <tbody>
+                            @foreach (var userr in Model)
+                            {
+                            <tr>
+                                <th scope="row">@userr.Id</th>
+                                <td>@userr.Nombre</td>
+                                <td>@userr.Apellido</td>
+                                <td>@userr.Correo</td>
+                                <td>@userr.Telefono</td>
+                                <td>@userr.Pais</td>
+                                <td>@Html.ActionLink("Deletee", "Delete", new { id = userr.Id }, new { @class = "btn btn--pill btn-danger" })</td>
+                                @*<td><a href="@Url.Action("Delete")" class="btn btn--pill btn-danger">Delete</a></td>*@
+                                <td><a href="@Url.Action("Update")" class="btn btn--pill btn--green">Update</a></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,45 @@
+﻿@model Formulario.Models.ViewModels.ListCrudViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="page-wrapper bg-gra-01 p-t-30 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Información</h2>
+                    @using (Html.BeginForm("CreateUser","Crud",FormMethod.Post))
+                    {
+                        <div class="input-group">
+                            @Html.TextBoxFor(d => d.Nombre ,"", new { @class = "input--style-3" , @placeholder = "Nombre" , @type="text"})
+                            @*<input class="input--style-3" type="text" placeholder="Nombre" name="name">*@
+                        </div>
+                        <div class="input-group">
+                            @Html.TextBoxFor(d => d.Apellido, "", new { @class = "input--style-3", @placeholder = "Apellido", @type = "text" })
+                            @*<input class="input--style-3 js-datepicker" type="text" placeholder="Apellido" name="lastName">*@
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                        <div class="input-group">
+                            @Html.TextBoxFor(d => d.Correo, "", new { @class = "input--style-3", @placeholder = "Email", @type = "email" })
+                            @*<input class="input--style-3 js-datepicker" type="email" placeholder="Correo" name="email">*@
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+                        <div class="input-group">
+                            @Html.TextBoxFor(d => d.Telefono, "", new { @class = "input--style-3", @placeholder = "Teléfono", @type = "text" })
+                            @*<input class="input--style-3" type="text" placeholder="telefono" name="Telefono">*@
+                        </div>
+                        <div class="input-group">
+                            @Html.TextBoxFor(d => d.Pais, "", new { @class = "input--style-3", @placeholder = "País", @type = "text" })
+                            @*<input class="input--style-3" type="text" placeholder="país" name="Pais">*@
+                        </div>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Enviar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>

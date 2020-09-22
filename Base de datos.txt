@@ -1,0 +1,26 @@
+CREATE DATABASE Form
+
+
+USE [Form]
+GO
+
+/****** Object:  Table [dbo].[TB_Form]    Script Date: 7/9/2020 22:15:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TB_Form](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [varchar](50) NULL,
+	[apellido] [varchar](50) NULL,
+	[correo] [varchar](50) NULL,
+	[telefono] [varchar](20) NULL,
+	[pais] [varchar](20) NULL,
+ CONSTRAINT [PK__TB_Form__3213E83F3BDAFCB6] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
